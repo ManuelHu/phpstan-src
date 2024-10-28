@@ -27,7 +27,7 @@ final class ArrayKeysFunctionDynamicReturnTypeExtension implements DynamicFuncti
 
 	public function getTypeFromFunctionCall(FunctionReflection $functionReflection, FuncCall $functionCall, Scope $scope): ?Type
 	{
-		if (count($functionCall->getArgs()) !== 1) {
+		if (!isset($functionCall->getArgs()[0])) {
 			return null;
 		}
 
